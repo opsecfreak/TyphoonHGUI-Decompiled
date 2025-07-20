@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\TyphoonHGUI\WpfAppTyphoonH.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A16F6A4F-3197-42EE-8400-E562BEBBF3AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>WpfAppTyphoonH</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.4.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>WpfAppTyphoonH</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GetWebPage">
+      <HintPath>lib\GetWebPage.dll</HintPath>
+    </Reference>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>lib\LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MotorAircraft">
+      <HintPath>lib\MotorAircraft.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Sparrow.Chart.Wpf.40">
+      <HintPath>lib\Sparrow.Chart.Wpf.40.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TAlex.WPF.Controls">
+      <HintPath>lib\TAlex.WPF.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WpfJudgement">
+      <HintPath>lib\WpfJudgement.dll</HintPath>
+    </Reference>
+    <Reference Include="WpfLed">
+      <HintPath>lib\WpfLed.dll</HintPath>
+    </Reference>
+    <Reference Include="Wpfbootload">
+      <HintPath>lib\Wpfbootload.exe</HintPath>
+    </Reference>
+    <Reference Include="YCustomControlLibrary">
+      <HintPath>lib\YCustomControlLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="battery">
+      <HintPath>lib\battery.dll</HintPath>
+    </Reference>
+    <Reference Include="mavlink">
+      <HintPath>lib\mavlink.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="_Point.cs" />
+    <Compile Include="WriteLog.cs" />
+    <Compile Include="Version.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="DBConnect.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="MyClass\NativeMethods.cs" />
+    <Compile Include="MyControlCloseModule.xaml.cs">
+      <DependentUpon>mycontrolclosemodule.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyControlMinimizeModule.xaml.cs">
+      <DependentUpon>mycontrolminimizemodule.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>settingswindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyControlRestoreModule.xaml.cs">
+      <DependentUpon>mycontrolrestoremodule.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>mainwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyControlMaxamizeModule.xaml.cs">
+      <DependentUpon>mycontrolmaxamizemodule.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyMessageBox.xaml.cs">
+      <DependentUpon>mymessagebox.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>app.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\battery_p.png" />
+    <Resource Include="resource\connect.ico" />
+    <Resource Include="resource\exit.ico" />
+    <Resource Include="resource\font.ico" />
+    <Resource Include="resource\setting.ico" />
+    <Resource Include="resource\y.ico" />
+    <Resource Include="resources\calibration.png" />
+    <Resource Include="resources\cst.png" />
+    <Resource Include="resources\device.png" />
+    <Resource Include="resources\fst.png" />
+    <Resource Include="resources\gps.png" />
+    <Resource Include="resources\hst.png" />
+    <Resource Include="resources\main.ico" />
+    <Resource Include="resources\mainico.png" />
+    <Resource Include="resources\senor.png" />
+    <Resource Include="resources\typhoonh.png" />
+    <Resource Include="resources\usbpic.png" />
+    <Resource Include="y.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="app.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dictionarytabcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mainwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mycontrol\closemodule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mycontrol\maxamizemodule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mycontrol\minimizemodule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mycontrol\restoremodule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="mymessagebox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="settingswindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="template\windowactionbutton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="template\windowactionbuttont.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

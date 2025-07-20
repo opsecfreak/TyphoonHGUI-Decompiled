@@ -1,0 +1,115 @@
+<Window x:Class="WpfAppTyphoonH.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen" Title="SettingsWindow" Height="310" Width="261"
+        ResizeMode="NoResize">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <TabControl Name="tabcontrol" Margin="5,5,5,2">
+      <TabItem Header="USB">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Line Grid.Row="1" StrokeThickness="1" Stroke="#FFA0A0A0" X1="10" X2="225"/>
+          <Line Grid.Row="3" StrokeThickness="1" Stroke="#FFA0A0A0" X1="10" X2="225"/>
+          <CheckBox Name="checkboxauto" Grid.Row="4" Margin="128,10,0,10" IsChecked="True">Auto Connect</CheckBox>
+          <Grid Row="0">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="5,0,0,0">Now:</Label>
+            <Label Name="labelusbvid" Margin="10,0,0,0" Grid.Row="1" Grid.Column="1" FontWeight="Bold">VID:</Label>
+            <Label Name="labelusbpid" Margin="10,0,0,0" Grid.Row="2" Grid.Column="1" FontWeight="Bold">PID:</Label>
+          </Grid>
+          <Grid Row="2">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="5,0,0,0">New:</Label>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+              <Label Margin="10,0,0,0" FontWeight="Bold">VID:</Label>
+              <TextBox Name="textboxvid" Margin="10,3,0,3" Width="100"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+              <Label Margin="10,0,0,0" FontWeight="Bold">PID:</Label>
+              <TextBox Name="textboxpid" Margin="10,3,0,3" Width="100"/>
+            </StackPanel>
+          </Grid>
+        </Grid>
+      </TabItem>
+      <TabItem Header="SerialPort">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Line Grid.Row="1" StrokeThickness="1" Stroke="#FFA0A0A0" X1="10" X2="225"/>
+          <Line Grid.Row="3" StrokeThickness="1" Stroke="#FFA0A0A0" X1="10" X2="225"/>
+          <Button Click="buttontesting_Click" Name="buttontesting" Grid.Row="4" Margin="158,8,10,5" IsEnabled="false">testing</Button>
+          <Grid Row="0">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="5,0,0,0">Now:</Label>
+            <Label Name="labelserialport" Margin="10,0,0,0" Grid.Row="1" Grid.Column="1" FontWeight="Bold">Port:</Label>
+            <Label Name="labelserialbaud" Margin="10,0,0,0" Grid.Row="2" Grid.Column="1" FontWeight="Bold">Baud:</Label>
+          </Grid>
+          <Grid Row="2">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="5,0,0,0">New:</Label>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+              <Label Margin="10,0,0,0" FontWeight="Bold">Port:</Label>
+              <ComboBox SelectionChanged="comboboxport_SelectionChanged" Name="comboboxport" Margin="10,3,0,3" Width="100"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+              <Label Margin="10,0,0,0" FontWeight="Bold">Baud:</Label>
+              <TextBox Name="textboxbaud" Margin="6,3,0,3" Width="98"/>
+            </StackPanel>
+          </Grid>
+        </Grid>
+      </TabItem>
+    </TabControl>
+    <StackPanel Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+      <Button Click="buttonapply_Click" Name="buttonapply" Margin="5,5,2,8" Padding="10,2,10,2">Apply</Button>
+      <Button Click="buttoncancel_Click" Name="buttoncancel" Margin="2,5,2,8" Padding="10,2,10,2">Cancel</Button>
+      <Button Click="buttonok_Click" Name="buttonok" Margin="2,5,5,8" Padding="10,2,10,2">OK</Button>
+    </StackPanel>
+  </Grid>
+</Window>

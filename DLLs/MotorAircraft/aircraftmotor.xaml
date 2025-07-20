@@ -1,0 +1,53 @@
+<UserControl x:Class="MotorAircraft.Motor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             RenderTransformOrigin="0.5,0.5">
+  <UIElement.RenderTransform>
+    <TransformGroup>
+      <ScaleTransform/>
+      <SkewTransform/>
+      <RotateTransform Angle="90"/>
+      <TranslateTransform/>
+    </TransformGroup>
+  </UIElement.RenderTransform>
+  <Control.Background>
+    <ImageBrush ImageSource="Resources/FST.png" Stretch="UniformToFill">
+      <Brush.RelativeTransform>
+        <TransformGroup>
+          <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="1.12" ScaleY="1.12"/>
+          <SkewTransform CenterY="0.5" CenterX="0.5"/>
+          <RotateTransform CenterY="0.5" CenterX="0.5"/>
+          <TranslateTransform/>
+        </TransformGroup>
+      </Brush.RelativeTransform>
+    </ImageBrush>
+  </Control.Background>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition/>
+      <RowDefinition/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Ellipse MouseDown="motor1_MouseDown" MouseLeave="motor1_MouseLeave" MouseUp="motor1_MouseUp"
+             x:Name="motor1" Grid.Column="1" Margin="5,0,5,0" Stroke="Black" Cursor="Hand"/>
+    <Ellipse MouseDown="motor2_MouseDown" MouseLeave="motor2_MouseLeave" MouseUp="motor2_MouseUp"
+             x:Name="motor2" Grid.Row="1" Margin="5,-8,5,8" Stroke="Black" Cursor="Hand"/>
+    <Ellipse MouseDown="motor3_MouseDown" MouseLeave="motor3_MouseLeave" MouseUp="motor3_MouseUp"
+             x:Name="motor3" Grid.Row="2" Margin="5,8,5,-8" Stroke="Black" Cursor="Hand"/>
+    <Ellipse MouseDown="motor4_MouseDown" MouseLeave="motor4_MouseLeave" MouseUp="motor4_MouseUp"
+             x:Name="motor4" Grid.Row="3" Grid.Column="1" Margin="5,0,5,0" Stroke="Black" Cursor="Hand"/>
+    <Ellipse MouseDown="motor6_MouseDown" MouseLeave="motor6_MouseLeave" MouseUp="motor6_MouseUp"
+             x:Name="motor6" Grid.Row="1" Grid.Column="2" Margin="5,-8,5,8" Stroke="Black" Cursor="Hand"/>
+    <Ellipse MouseDown="motor5_MouseDown" MouseLeave="motor5_MouseLeave" MouseUp="motor5_MouseUp"
+             x:Name="motor5" Grid.Row="2" Grid.Column="2" Margin="5,8,5,-8" Stroke="Black" Cursor="Hand"/>
+  </Grid>
+</UserControl>

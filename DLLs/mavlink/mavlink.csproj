@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\TyphoonHGUI\myDLL\mavlink.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C21D2ED9-3FEA-4516-B04B-8B19D1EC9041}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>mavlink</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MavLinkNet</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>lib\LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System\IO\BlockingCircularStream.cs" />
+    <Compile Include="PacketReceivedDelegate.cs" />
+    <Compile Include="MavLinkGenericPacketWalker.cs" />
+    <Compile Include="MavLinkGenericTransport.cs" />
+    <Compile Include="MavLinkLogFileTransport.cs" />
+    <Compile Include="MavLinkPacket.cs" />
+    <Compile Include="MavLinkSerialPortTransport.cs" />
+    <Compile Include="MavLinkUdpTransport.cs" />
+    <Compile Include="MavLinkAsyncWalker.cs" />
+    <Compile Include="MavAutopilot.cs" />
+    <Compile Include="MavType.cs" />
+    <Compile Include="MavModeFlag.cs" />
+    <Compile Include="MavModeFlagDecodePosition.cs" />
+    <Compile Include="MavGoto.cs" />
+    <Compile Include="MavMode.cs" />
+    <Compile Include="MavState.cs" />
+    <Compile Include="MavComponent.cs" />
+    <Compile Include="MavSysStatusSensor.cs" />
+    <Compile Include="MavFrame.cs" />
+    <Compile Include="MavlinkDataStreamType.cs" />
+    <Compile Include="MavCmd.cs" />
+    <Compile Include="MavDataStream.cs" />
+    <Compile Include="MavRoi.cs" />
+    <Compile Include="MavCmdAck.cs" />
+    <Compile Include="MavParamType.cs" />
+    <Compile Include="MavResult.cs" />
+    <Compile Include="MavMissionResult.cs" />
+    <Compile Include="MavSeverity.cs" />
+    <Compile Include="MavMountMode.cs" />
+    <Compile Include="FenceAction.cs" />
+    <Compile Include="FenceBreach.cs" />
+    <Compile Include="LimitsState.cs" />
+    <Compile Include="LimitModule.cs" />
+    <Compile Include="RallyFlags.cs" />
+    <Compile Include="MavRequestInfoSystemId.cs" />
+    <Compile Include="MavRequestInfoType.cs" />
+    <Compile Include="MavResquestInfoSoftwareType.cs" />
+    <Compile Include="MavParamUidDecryptCmd.cs" />
+    <Compile Include="UasHeartbeat.cs" />
+    <Compile Include="UasSysStatus.cs" />
+    <Compile Include="UasSystemTime.cs" />
+    <Compile Include="UasPing.cs" />
+    <Compile Include="UasChangeOperatorControl.cs" />
+    <Compile Include="UasChangeOperatorControlAck.cs" />
+    <Compile Include="MavLinkCalibrationData.cs" />
+    <Compile Include="UasSetMode.cs" />
+    <Compile Include="UasParamRequestRead.cs" />
+    <Compile Include="UasParamRequestList.cs" />
+    <Compile Include="UasParamValue.cs" />
+    <Compile Include="UasParamSet.cs" />
+    <Compile Include="UasGpsRawInt.cs" />
+    <Compile Include="UasGpsStatus.cs" />
+    <Compile Include="UasScaledImu.cs" />
+    <Compile Include="UasRawImu.cs" />
+    <Compile Include="UasRawPressure.cs" />
+    <Compile Include="UasScaledPressure.cs" />
+    <Compile Include="UasAttitude.cs" />
+    <Compile Include="UasAttitudeQuaternion.cs" />
+    <Compile Include="UasLocalPositionNed.cs" />
+    <Compile Include="UasGlobalPositionInt.cs" />
+    <Compile Include="UasRcChannelsScaled.cs" />
+    <Compile Include="UasRcChannelsRaw.cs" />
+    <Compile Include="UasServoOutputRaw.cs" />
+    <Compile Include="UasMissionRequestPartialList.cs" />
+    <Compile Include="UasMissionWritePartialList.cs" />
+    <Compile Include="UasMissionItem.cs" />
+    <Compile Include="UasMissionRequest.cs" />
+    <Compile Include="UasMissionSetCurrent.cs" />
+    <Compile Include="UasMissionCurrent.cs" />
+    <Compile Include="UasMissionRequestList.cs" />
+    <Compile Include="UasMissionCount.cs" />
+    <Compile Include="UasMissionClearAll.cs" />
+    <Compile Include="UasMissionItemReached.cs" />
+    <Compile Include="UasMissionAck.cs" />
+    <Compile Include="UasSetGpsGlobalOrigin.cs" />
+    <Compile Include="UasGpsGlobalOrigin.cs" />
+    <Compile Include="UasSetLocalPositionSetpoint.cs" />
+    <Compile Include="MavlinkRequestInfoCmd.cs" />
+    <Compile Include="MavlinkRequestInfoFeedback.cs" />
+    <Compile Include="UasSetGlobalPositionSetpointInt.cs" />
+    <Compile Include="UasSafetySetAllowedArea.cs" />
+    <Compile Include="UasSafetyAllowedArea.cs" />
+    <Compile Include="MavLinkMsgIdSendUid.cs" />
+    <Compile Include="MavlinkUidDecryptCmd.cs" />
+    <Compile Include="MavlinkAckUidDecryptCmd.cs" />
+    <Compile Include="UasRollPitchYawSpeedThrustSetpoint.cs" />
+    <Compile Include="UasSetQuadMotorsSetpoint.cs" />
+    <Compile Include="UasSetQuadSwarmRollPitchYawThrust.cs" />
+    <Compile Include="UasNavControllerOutput.cs" />
+    <Compile Include="UasSetQuadSwarmLedRollPitchYawThrust.cs" />
+    <Compile Include="UasStateCorrection.cs" />
+    <Compile Include="MavLinkMsgIdRcChannels.cs" />
+    <Compile Include="UasRequestDataStream.cs" />
+    <Compile Include="UasDataStream.cs" />
+    <Compile Include="UasManualControl.cs" />
+    <Compile Include="UasRcChannelsOverride.cs" />
+    <Compile Include="UasVfrHud.cs" />
+    <Compile Include="UasCommandLong.cs" />
+    <Compile Include="UasCommandAck.cs" />
+    <Compile Include="UasRollPitchYawRatesThrustSetpoint.cs" />
+    <Compile Include="UasManualSetpoint.cs" />
+    <Compile Include="UasLocalPositionNedSystemGlobalOffset.cs" />
+    <Compile Include="UasHilState.cs" />
+    <Compile Include="UasHilControls.cs" />
+    <Compile Include="UasHilRcInputsRaw.cs" />
+    <Compile Include="UasOpticalFlow.cs" />
+    <Compile Include="UasGlobalVisionPositionEstimate.cs" />
+    <Compile Include="UasVisionPositionEstimate.cs" />
+    <Compile Include="UasVisionSpeedEstimate.cs" />
+    <Compile Include="UasViconPositionEstimate.cs" />
+    <Compile Include="UasHighresImu.cs" />
+    <Compile Include="UasOmnidirectionalFlow.cs" />
+    <Compile Include="UasHilSensor.cs" />
+    <Compile Include="UasSimState.cs" />
+    <Compile Include="UasRadioStatus.cs" />
+    <Compile Include="UasFileTransferStart.cs" />
+    <Compile Include="UasFileTransferDirList.cs" />
+    <Compile Include="UasFileTransferRes.cs" />
+    <Compile Include="UasHilGps.cs" />
+    <Compile Include="UasHilOpticalFlow.cs" />
+    <Compile Include="UasHilStateQuaternion.cs" />
+    <Compile Include="UasMavlinkLogRequestList.cs" />
+    <Compile Include="UasMavlinkLogEntry.cs" />
+    <Compile Include="UasMavlinkLogRequestData.cs" />
+    <Compile Include="UasMavlinkLogData.cs" />
+    <Compile Include="UasSetActuatorControlTarget.cs" />
+    <Compile Include="UasBatteryStatus.cs" />
+    <Compile Include="UasSetpoint8dof.cs" />
+    <Compile Include="UasSetpoint6dof.cs" />
+    <Compile Include="UasMemoryVect.cs" />
+    <Compile Include="UasDebugVect.cs" />
+    <Compile Include="UasNamedValueFloat.cs" />
+    <Compile Include="UasNamedValueInt.cs" />
+    <Compile Include="UasStatustext.cs" />
+    <Compile Include="UasDebug.cs" />
+    <Compile Include="UasSensorOffsets.cs" />
+    <Compile Include="UasSetMagOffsets.cs" />
+    <Compile Include="UasMeminfo.cs" />
+    <Compile Include="UasApAdc.cs" />
+    <Compile Include="UasDigicamConfigure.cs" />
+    <Compile Include="UasDigicamControl.cs" />
+    <Compile Include="UasMountConfigure.cs" />
+    <Compile Include="UasMountControl.cs" />
+    <Compile Include="UasMountStatus.cs" />
+    <Compile Include="UasFencePoint.cs" />
+    <Compile Include="UasFenceFetchPoint.cs" />
+    <Compile Include="UasFenceStatus.cs" />
+    <Compile Include="UasAhrs.cs" />
+    <Compile Include="1UasSimstate.cs" />
+    <Compile Include="UasHwstatus.cs" />
+    <Compile Include="UasRadio.cs" />
+    <Compile Include="UasLimitsStatus.cs" />
+    <Compile Include="UasWind.cs" />
+    <Compile Include="UasData16.cs" />
+    <Compile Include="UasData32.cs" />
+    <Compile Include="UasData64.cs" />
+    <Compile Include="UasData96.cs" />
+    <Compile Include="UasRangefinder.cs" />
+    <Compile Include="UasAirspeedAutocal.cs" />
+    <Compile Include="UasRallyPoint.cs" />
+    <Compile Include="UasRallyFetchPoint.cs" />
+    <Compile Include="MavlinkEkfStatusReport.cs" />
+    <Compile Include="UasSummary.cs" />
+    <Compile Include="MavLinkUSBTransport.cs" />
+    <Compile Include="ListDataDelegate.cs" />
+    <Compile Include="UasMessage.cs" />
+    <Compile Include="UasMessageMetadata.cs" />
+    <Compile Include="UasFieldMetadata.cs" />
+    <Compile Include="UasEnumMetadata.cs" />
+    <Compile Include="UasEnumEntryMetadata.cs" />
+    <Compile Include="MavLinkState.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

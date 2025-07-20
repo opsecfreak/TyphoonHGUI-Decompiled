@@ -1,0 +1,27 @@
+<UserControl x:Class="battery.Battery"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="11*"/>
+      <RowDefinition Height="70*"/>
+      <RowDefinition Height="11*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="11*"/>
+      <ColumnDefinition Width="177*"/>
+      <ColumnDefinition Width="29*"/>
+    </Grid.ColumnDefinitions>
+    <Rectangle Name="BatteryRemain" RadiusX="1" RadiusY="1" Grid.Row="1" Grid.Column="1" Margin="0"
+               HorizontalAlignment="Left">
+      <Shape.Fill>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+          <GradientStop Color="#FF09C935" Offset="0.775"/>
+          <GradientStop Color="#FF78DA5B" Offset="0.49"/>
+        </LinearGradientBrush>
+      </Shape.Fill>
+    </Rectangle>
+  </Grid>
+</UserControl>

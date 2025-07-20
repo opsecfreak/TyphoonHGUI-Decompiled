@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\TyphoonHGUI\myDLL\YuneecLINK.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F39A4344-72C9-4B17-A60B-037BCE53EE29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>YuneecLINK</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>YuneecLinkNet</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="System\IO\BlockingCircularStream.cs" />
+    <Compile Include="COMMAND_BYTES.cs" />
+    <Compile Include="REPLY_BYTES.cs" />
+    <Compile Include="UasSummary.cs" />
+    <Compile Include="EscOK.cs" />
+    <Compile Include="EscFAILED.cs" />
+    <Compile Include="EscBLSync.cs" />
+    <Compile Include="EscBLErase.cs" />
+    <Compile Include="EscBLProgram.cs" />
+    <Compile Include="EscBLCRC.cs" />
+    <Compile Include="EscBLReboot.cs" />
+    <Compile Include="YuneecAsyncWalker.cs" />
+    <Compile Include="PacketReceivedDelegate.cs" />
+    <Compile Include="MavLinkGenericPacketWalker.cs" />
+    <Compile Include="YuneecGenericTransport.cs" />
+    <Compile Include="YuneecLogFileTransport.cs" />
+    <Compile Include="YuneecLinkPacket.cs" />
+    <Compile Include="YuneecSerialPortTransport.cs" />
+    <Compile Include="YuneecUdpTransport.cs" />
+    <Compile Include="UasMessage.cs" />
+    <Compile Include="UasMessageMetadata.cs" />
+    <Compile Include="UasFieldMetadata.cs" />
+    <Compile Include="ListData.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

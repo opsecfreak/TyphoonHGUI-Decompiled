@@ -1,0 +1,118 @@
+<Window x:Class="Wpfbootload.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Wpfbootload"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:myControl="clr-namespace:Wpfbootload.MyControl"
+        Closing="window_Closing" Drop="window_Drop" Loaded="window_Loaded" Name="window"
+        Title="TyphoonH Program Update" Height="195" Width="500" WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize" Icon="Resources/MainICO.png" AllowDrop="true" WindowStyle="None"
+        Background="Transparent" SnapsToDevicePixels="true">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="WindowActionButton.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <local:HeightConvert x:Key="addHeight" AddValue="100"/>
+      <local:xHeightConvert x:Key="xHeight" xValue="100"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border x:Name="borderFrame" BorderBrush="{DynamicResource ApplicationAccentBrush}"
+          BorderThickness="1,1,1,1" CornerRadius="0" Background="White">
+    <Grid>
+      <Grid x:Name="containerFrame">
+        <Grid x:Name="homeHeader" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="40">
+          <Image Source="Resources/MainICO.png" HorizontalAlignment="Left" Margin="12,6,0,5"/>
+          <TextBlock x:Name="lblTitle" Text="Firmware Update" Foreground="Black" VerticalAlignment="Top"
+                     HorizontalAlignment="Stretch" FontSize="18" Margin="48,9,100,0" TextTrimming="CharacterEllipsis"
+                     FontFamily="Segoe WP SemiLight" FontWeight="Bold"/>
+          <Thumb DragDelta="headerThumb_DragDelta" MouseDoubleClick="headerThumb_MouseDoubleClick"
+                 x:Name="headerThumb" Opacity="0" Height="35" VerticalAlignment="Top" Background="{x:Null}"
+                 Foreground="{x:Null}"/>
+          <StackPanel x:Name="homeHeaderActionButtons" Orientation="Horizontal" VerticalAlignment="Top"
+                      HorizontalAlignment="Right" Height="26" Margin="0,0,0,0">
+            <Button Click="btnActionMinimize_Click" x:Name="btnActionMinimize" ToolTip="Minimize" Width="34"
+                    Height="26" Margin="0" Style="{StaticResource WindowActionButton}" VerticalAlignment="Top">
+              <myControl:MinimizeModule Width="34" Height="26"/>
+            </Button>
+            <Button Click="btnActionClose_Click" x:Name="btnActionClose" ToolTip="Close" Width="34" Height="26"
+                    Margin="0" Style="{StaticResource WindowActionButton}">
+              <myControl:CloseModule Width="34" Height="26"/>
+            </Button>
+          </StackPanel>
+        </Grid>
+        <Grid Margin="0,40,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid Row="0" ColumnSpan="2">
+            <Grid.RowDefinitions>
+              <RowDefinition/>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="10,5,10,0" Grid.Row="0" Grid.Column="0" FontSize="16">File:</Label>
+            <Label Margin="10,0,10,5" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="16">Port:</Label>
+            <TextBox Name="textboxfilename" Margin="10,10,10,5" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+            <ComboBox Name="combox" Margin="10,4,10,6" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                      FontSize="14" Text="{Binding Port, Mode=TwoWay}"/>
+            <Button Click="buttonopenfile_Click" Name="buttonopenfile" Margin="20,10,20,5" Padding="10,0,10,0"
+                    Grid.Row="0" Grid.Column="2" FontSize="14">...</Button>
+            <ProgressBar Name="progressbar" Margin="15,6,20,0" Grid.Row="2" Grid.ColumnSpan="3" Height="25"
+                         Maximum="{Binding Maximum, Mode=TwoWay}" Value="{Binding Barvalue, Mode=TwoWay}"/>
+          </Grid>
+          <TextBox TextChanged="textboxlog_TextChanged" Name="textboxlog" Height="0" Margin="15,8,20,2" Grid.Row="1"
+                   VerticalAlignment="Stretch" TextWrapping="Wrap" Grid.ColumnSpan="2"
+                   Text="{Binding Log, Mode=OneWay}"/>
+          <Grid Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Expander Name="expander" Grid.Column="0" Margin="14,0,0,12" ExpandDirection="Up" Header="More"
+                      FontWeight="Bold"/>
+            <Button Click="ButtonReboot_Click" Name="ButtonReboot" Grid.Column="1" Margin="57,0,20,8"
+                    Visibility="Collapsed" IsEnabled="{Binding IsReboot, Mode=TwoWay}">Reboot</Button>
+            <Button Click="ButtonSoftwareVersion_Click" Name="ButtonSoftwareVersion" Grid.Column="2" Margin="0,0,20,8"
+                    Width="130" Visibility="Collapsed" IsEnabled="{Binding IsGetSoftware, Mode=TwoWay}">Software Version</Button>
+            <Button Click="buttondownload_Click" Name="buttondownload" Grid.Column="3" Margin="0,0,20,12"
+                    Padding="15,3,15,3" Width="94" Height="23" VerticalContentAlignment="Center"
+                    VerticalAlignment="Center" FontWeight="Bold" IsEnabled="{Binding IsdownLoad, Mode=TwoWay}"
+                    Content="{Binding DownLoad, Mode=TwoWay}"/>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  </Border>
+  <FrameworkElement.Triggers>
+    <EventTrigger SourceName="expander" RoutedEvent="Expander.Expanded">
+      <BeginStoryboard>
+        <Storyboard>
+          <DoubleAnimation Storyboard.TargetName="textboxlog" Storyboard.TargetProperty="Height" To="100" BeginTime="0:0:0.2"
+                           Duration="0:0:0.2"/>
+          <DoubleAnimation Storyboard.TargetName="window" Storyboard.TargetProperty="Height" Duration="0:0:0.2"
+                           To="{Binding ElementName=window, Path=Height, Converter={StaticResource addHeight}}"/>
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+    <EventTrigger SourceName="expander" RoutedEvent="Expander.Collapsed">
+      <BeginStoryboard>
+        <Storyboard>
+          <DoubleAnimation Storyboard.TargetName="window" Storyboard.TargetProperty="Height" BeginTime="0:0:0.2"
+                           Duration="0:0:0.2"
+                           To="{Binding ElementName=window, Path=Height, Converter={StaticResource xHeight}}"/>
+          <DoubleAnimation Storyboard.TargetName="textboxlog" Storyboard.TargetProperty="Height" Duration="0:0:0.2"/>
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </FrameworkElement.Triggers>
+</Window>
